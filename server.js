@@ -61,7 +61,6 @@ app.use(require('./middleware/load-user'))
 app.use(require('./middleware/load-options'))
 
 // HTTP endpoints
-app.post('/', require('./routes/post'))
 app.get('/*', require('./routes/get'))
 
 // Start listening for HTTP requests
