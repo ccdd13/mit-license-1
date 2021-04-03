@@ -7,9 +7,9 @@ const getExtension = require('file-ext')
 const path = require('path-extra')
 const is = require('@sindresorhus/is')
 
-async function report (content, fix) {
+async function report (content, callback) {
   console.error(content)
-  if (fix && hasFlag('--fix')) await fix()
+  if (callback && typeof callback === 'function' && hasFlag('--fix')) await callback()
   process.exitCode = 1
 }
 
